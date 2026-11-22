@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anass – Portfolio</title>
+
+    <style>
+        :root {
+            --bg: #f7f9fc;
+            --text: #2c3e50;
+            --accent: #4a6fa1;
+            --card-bg: #ffffff;
+            --radius: 14px;
+            --shadow: 0 4px 14px rgba(0,0,0,0.08);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        /* HERO */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #2c3e50, #4a6fa1);
+            color: white;
+        }
+
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            margin: 10px 0;
+        }
+
+        header p {
+            font-size: 20px;
+            opacity: 0.95;
+            margin: 5px 0;
+        }
+
+        /* CONTAINER */
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-left: 6px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        /* SECTIONS */
+        .section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        /* PROJECT GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: #fafafa;
+            padding: 20px;
+            border-radius: var(--radius);
+            border-left: 5px solid var(--accent);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        }
+
+        .project h3 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .project a {
+            color: var(--accent);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        .project-links {
+            margin-top: auto;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        /* CONTACT */
+        .contact p {
+            font-size: 18px;
+            margin: 8px 0;
+        }
+
+        .contact a {
+            color: var(--accent);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 40px;
+        }
+
+        /* ============================
+           MOBILANPASSNING
+           ============================ */
+        @media (max-width: 600px) {
+
+            header {
+                padding: 40px 15px;
+            }
+
+            header img {
+                width: 110px;
+                height: 110px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .container {
+                width: 94%;
+                margin: 30px auto;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                padding: 18px;
+            }
+
+            .project-links {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <header>
+        <img src="bild.jpg" alt="Anass">
+        <h1>Anass Fahsi</h1>
+        <p>Étudiant en Développement Full Stack – Medieinstitutet</p>
+        <p>Stockholm, Suède</p>
+    </header>
+
+    <div class="container">
+
+        <!-- OM MIG -->
+        <div class="section">
+            <h2>À propos de moi</h2>
+            <p>
+                Je suis étudiant en développement Full Stack et passionné par la création d'applications web modernes. J'apprécie particulièrement le développement backend, les API et les bases de données. J'aime résoudre des problèmes, concevoir des solutions efficaces et évoluer au sein d'une équipe
+            </p>
+        </div>
+
+        <!-- PROJEKT -->
+        <div class="section">
+            <h2>Projets</h2>
+
+            <div class="projects-grid">
+
+                <div class="project">
+                    <h3>Forum communautaire – PHP, SQL, Tailwind</h3>
+                    <p>
+                        Une plateforme où les utilisateurs peuvent s'inscrire, rejoindre des groupes, demander une adhésion, créer des discussions et répondre aux publications. L'accent a été mis sur la sécurité des données et la conception de la base de données.
+                    </p>
+                    <p class="project-links">
+                        🔗 <a href="https://github.com/anassFahsi/community-forum" target="_blank">GitHub</a>
+                        🔗 <a href="https://community-forum-sigma.vercel.app" target="_blank">Demo</a>
+                    </p>
+                </div>
+
+                <div class="project">
+                    <h3>E-commerce – React, Node.js, PostgreSQL</h3>
+                    <p>
+                      Une application moderne de commerce électronique avec catalogue de produits, panier d’achat, tunnel de commande et communication via API. Développée avec React (frontend) et Node.js/Express (backend). Intégrée à Stripe pour les paiements, PostNord pour les options de livraison et Google OAuth pour l’authentification.
+                    </p>
+                    <p class="project-links">
+                        🔗 <a href="https://github.com/anassFahsi/E-handel" target="_blank">GitHub</a>
+                        🔗 <a href="https://fashionhub-live.vercel.app" target="_blank">Demo</a>
+                    </p>
+                </div>
+
+                <div class="project">
+                    <h3>Application de recettes – React, TypeScript, Node.js, API REST, PostgreSQL</h3>
+                    <p>
+                       Projet réalisé en groupe consistant à développer une plateforme complète de recettes avec authentification, gestion des recettes, gestion des ingrédients et interface d'administration. Développée avec React, TypeScript, Node.js et PostgreSQL. L'accent a été mis sur la conception d'API, la modélisation des données, le travail en équipe et la qualité du code.
+                    </p>
+                    <p class="project-links">
+                        🔗 <a href="https://github.com/anassFahsi/Recept-tjanst" target="_blank">GitHub</a>
+                        🔗 <a href="https://recept-tjanst-frontend.vercel.app" target="_blank">Demo</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- KONTAKT -->
+        <div class="section contact">
+            <h2>Kontakt</h2>
+            <p>📧 anass-fahsi@hotmail.com</p>
+            <p>📱 0046 76‑4019190</p>
+            <p>🔗 <a href="https://github.com/anassFahsi" target="_blank">GitHub</a></p>
+            <p>🔗 <a href="https://www.linkedin.com/in/anass-fahsi-680b4240b" target="_blank">LinkedIn</a></p>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 Anass Fahsi — Fullstack Developer
+    </footer>
+
+</body>
+</html>
